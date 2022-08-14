@@ -1,6 +1,6 @@
 package com.samueldu.leetcode.graph.unionfind;
 
-public class NumberOfProfices_UnionFind {
+public class NumberOfProvinces_UnionFind {
 
 
         // Union Find

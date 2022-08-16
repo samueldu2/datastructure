@@ -1,4 +1,4 @@
-package com.samueldu.leetcode.studyplan.leetcode75.level3;
+package com.samueldu.leetcode.studyplan.leetcode75.level3.bitOperations.backtracking;
 
 import java.util.Arrays;
 import java.util.HashSet;

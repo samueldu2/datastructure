@@ -12,3 +12,7 @@ Postorder Traversal
    1. Traverse the left subtree, i.e., call Postorder(left-subtree)
    2. Traverse the right subtree, i.e., call Postorder(right-subtree)
    3. Visit the root.
+
+Level Order Transversal
+   1. transverse the first depth level of the tree,
+   2. transverse the next depth level of the tree.

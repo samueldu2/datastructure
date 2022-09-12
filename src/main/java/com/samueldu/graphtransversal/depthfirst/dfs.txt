@@ -1,0 +1,4 @@
+Complexity Analysis
+Time Complexity: O(V + E)O(V+E). Here, VV represents the number of vertices, and EE represents the number of edges. We need to check every vertex and traverse through every edge in the graph.
+
+Space Complexity: O(V)O(V). Either the manually created stack or the recursive call stack can store up to VV vertices.

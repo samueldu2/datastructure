@@ -1,4 +1,4 @@
-package com.samueldu.leetcode.topinterviewquestions;
+package com.samueldu.leetcode.topinterviewquestions.array;
 
 /**
  * Remove Duplicates from Sorted Array

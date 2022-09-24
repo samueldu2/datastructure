@@ -1,4 +1,4 @@
-package com.samueldu.leetcode.topinterviewquestions;
+package com.samueldu.leetcode.topinterviewquestions.array;
 
 public class BestTimetoBuyandSellStockII {
     public int maxProfit(int[] prices) {

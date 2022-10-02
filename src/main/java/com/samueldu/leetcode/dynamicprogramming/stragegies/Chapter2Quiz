@@ -1,0 +1,83 @@
+logo
+Explore
+Problems
+Interview
+Contest
+Discuss
+Store
+🔈 LeetCode is hiring! Apply NOW.🔈
+2
+0
+  Back to Chapter
+  Chapter 2 quiz
+Report Issue
+Multiple Choice Question
+The three main components of the framework are:
+
+The choice between bottom-up and top-down
+
+The base cases
+
+The recurrence relation
+
+The number of dimensions
+
+The time complexity
+
+A data structure and a way of visiting each DP state
+
+Redo
+
+Submit
+Correct.
+Commit these to memory! Understanding the components of the framework allows us to approach dynamic programming problems in a step by step way.
+
+
+
+
+Multiple Choice Question
+Which of the following require state variables?
+
+Remaining number of moves allowed
+
+Original length of the input
+
+Current index along the input
+
+Number of keys currently being held
+
+The original number of moves allowed
+
+Redo
+
+Submit
+
+
+
+
+Multiple Choice Question
+Typically, implementing a top-down algorithm is easier than the equivalent bottom-up algorithm.
+
+True
+
+False
+
+Redo
+
+Submit
+
+
+
+
+Multiple Choice Question
+Generally, the time and space complexity of dynamic programming algorithms is directly related to:
+
+Whether the algorithm is top-down or bottom-up
+
+The number of possible states
+
+Whether an array or hashtable is used for caching results
+
+Redo
+
+Submit

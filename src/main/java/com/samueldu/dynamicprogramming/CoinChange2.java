@@ -54,9 +54,40 @@ public class CoinChange2 {
      * @param amount
      * @param coins
      * @return
+     *
+     * Now the strategy is here:
+     *
+     * Add coins one-by-one, starting from base case "no coins".
+     *
+     * For each added coin, compute recursively the number of combinations for each amount of money from 0 to amount.
+     *
+     * Algorithm
+     *
+     * Initiate number of combinations array with the base case "no coins": dp[0] = 1, and all the rest = 0.
+     *
+     * Loop over all coins:
+     *
+     * For each coin, loop over all amounts from 0 to amount:
+     *
+     * For each amount x, compute the number of combinations: dp[x] += dp[x - coin].
+     * Return dp[amount].
      */
-    public int change(int amount, int[] coins) {
 
+
+    public int change(int amount, int[] coins) {
+       int [] dp = new int[amount+1];
+        /**
+         * choices with no coins
+         */
+        dp[0]=1;
+        if(amount==0|| coins.length==0) return 1;
+        for (int coin :coins) {
+            for (int i = 0; i < amount+1; i++) {
+                if(i-coin>=0)
+                    dp[i] = dp[i] + dp[i - coin];
+            }
+        }
+        return dp[amount];
     }
 
 }

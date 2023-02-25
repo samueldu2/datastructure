@@ -7,7 +7,8 @@ import java.util.*;
 /**
  * Evaluate Division
  *
- * You are given an array of variable pairs equations and an array of real numbers values, where equations[i] = [Ai, Bi] and values[i] represent the equation Ai / Bi = values[i]. Each Ai or Bi is a string that represents a single variable.
+ * You are given an array of variable pairs equations and an array of real numbers values, where equations[i] = [Ai, Bi]
+ * and values[i] represent the equation Ai / Bi = values[i]. Each Ai or Bi is a string that represents a single variable.
  *
  * You are also given some queries, where queries[j] = [Cj, Dj] represents the jth query where you must find the answer for Cj / Dj = ?.
  *
@@ -95,7 +96,8 @@ public class EvaluateDivision {
  * ​
  *  =2⋅3=6
  *
- * Each division implies the reverse of the division, which is how we derive the equations in (1). While by chaining up equations, we could obtain new equations in (2).
+ * Each division implies the reverse of the division, which is how we derive the equations in (1).
+ * While by chaining up equations, we could obtain new equations in (2).
  *
  * We could reformulate the equations with the graph data structure, where each variable can be represented as a node in the graph, and the division relationship between variables can be modeled as edge with direction and weight.
  *
@@ -214,7 +216,8 @@ public class EvaluateDivision {
         return results;
     }
 
-    private double backtrackEvaluate(HashMap<String, HashMap<String, Double>> graph, String currNode, String targetNode, double accProduct, Set<String> visited) {
+    private double backtrackEvaluate(HashMap<String, HashMap<String, Double>> graph, String currNode, String targetNode, double accProduct,
+                                     Set<String> visited) {
 
         // mark the visit
         visited.add(currNode);

@@ -4,7 +4,9 @@ package com.samueldu.dynamicprogramming;
  * Approach 3: Dynamic Programming
  * Algorithm
  *
- * As we can see this problem can be broken into subproblems, and it contains the optimal substructure property i.e. its optimal solution can be constructed efficiently from optimal solutions of its subproblems, we can use dynamic programming to solve this problem.
+ * As we can see this problem can be broken into subproblems, and it contains the optimal substructure property
+ * i.e. its optimal solution can be constructed efficiently from optimal solutions of its subproblems,
+ * we can use dynamic programming to solve this problem.
  *
  * One can reach i^{th}i
  * th
@@ -26,11 +28,11 @@ package com.samueldu.dynamicprogramming;
  * th
  *   step.
  *
- * Let dp[i]dp[i] denotes the number of ways to reach on i^{th}i
+ * Let dp[i] denotes the number of ways to reach on i^{th}i
  * th
  *   step:
  *
- * dp[i]=dp[i-1]+dp[i-2]dp[i]=dp[i−1]+dp[i−2]
+ * dp[i]=dp[i-1]+dp[i-2]
  *
  * Complexity Analysis
  *
@@ -45,7 +47,9 @@ public class ClimbingStairsWithDynamicProgramming {
             return 1;
         }
         int[] dp = new int[n + 1];
+        dp[0]=0;
         dp[1] = 1;
+        // one can reach the 2nd step in two ways, 1. step 1 at a time for two times. 2. step 2 steps for one time.
         dp[2] = 2;
         for (int i = 3; i <= n; i++) {
             dp[i] = dp[i - 1] + dp[i - 2];

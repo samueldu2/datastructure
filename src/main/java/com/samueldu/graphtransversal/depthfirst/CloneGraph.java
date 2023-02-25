@@ -68,39 +68,63 @@ public class CloneGraph {
      * Approach 1: Depth First Search
      * Intuition
      * <p>
-     * Note: As we can see this question has garnered a lot of negative reviews. It has a lot more dislikes than the likes. We have tried to improve the problem statement to make it more understandable. However, these are the kinds of situations you might get into in an interview when the problem statement might look a little absurd. What is important then is to ask the interviewer to clarify the problem. This problem statement was confusing to me as well initially and that's why I decided to write the solution hoping to clarify most of the doubts that the readers might have had.
+     * Note: As we can see this question has garnered a lot of negative reviews. It has a lot more dislikes than the likes.
+     * We have tried to improve the problem statement to make it more understandable.
+     * However, these are the kinds of situations you might get into in an interview when the problem statement might look a little absurd.
+     * What is important then is to ask the interviewer to clarify the problem.
+     * This problem statement was confusing to me as well initially and that's why I decided to write the solution hoping to clarify most of the doubts
+     * that the readers might have had.
      * <p>
-     * The basic intuition for this problem is to just copy as we go. We need to understand that we are dealing with a graph and this means a node could have any number of neighbors. This is why neighbors is a list. What is also crucial to understand is that we don't want to get stuck in a cycle while we are traversing the graph. According to the problem statement, any given undirected edge could be represented as two directional edges. So, if there is an undirected edge between node A and node B, the graph representation for it would have a directed edge from A to B and another from B to A. After all, an undirected graph is a set of nodes that are connected together, where all the edges are bidirectional. How else would you say that A could be reached from B and B could be reached from A?
+     * The basic intuition for this problem is to just copy as we go. We need to understand that we are dealing with a graph and this means a node
+     * could have any number of neighbors. This is why neighbors is a list. What is also crucial to understand is that we don't want to get
+     * stuck in a cycle while we are traversing the graph. According to the problem statement, any given undirected edge could be represented as two directional edges.
+     * So, if there is an undirected edge between node A and node B, the graph representation for it would have a directed edge from A to B and another from B to A.
+     * After all, an undirected graph is a set of nodes that are connected together, where all the edges are bidirectional.
+     * How else would you say that A could be reached from B and B could be reached from A?
      * <p>
      * <p>
-     * To avoid getting stuck in a loop we would need some way to keep track of the nodes which have already been copied. By doing this we don't end up traversing them again.
+     * To avoid getting stuck in a loop we would need some way to keep track of the nodes which have already been copied.
+     * By doing this we don't end up traversing them again.
      * <p>
      * Algorithm
      * <p>
      * Start traversing the graph from the given node.
      * <p>
-     * We would take a hash map to store the reference of the copy of all the nodes that have already been visited and cloned. The key for the hash map would be the node of the original graph and corresponding value would be the corresponding cloned node of the cloned graph. If the node already exists in the visited we return corresponding stored reference of the cloned node.
+     * We would take a hash map to store the reference of the copy of all the nodes that have already been visited and cloned.
+     * The key for the hash map would be the node of the original graph and corresponding value would be the corresponding cloned node of the cloned graph.
+     * If the node already exists in the visited we return corresponding stored reference of the cloned node.
      * <p>
      * For a given edge A - B, since A is connected to B and B is also connected to A if we don't use visited we will get stuck in a cycle.
      * <p>
      * <p>
-     * If we don't find the node in the visited hash map, we create a copy of it and put it in the hash map. Note, how it's important to create a copy of the node and add to the hash map before entering recursion.
+     * If we don't find the node in the visited hash map, we create a copy of it and put it in the hash map.
+     * Note, how it's important to create a copy of the node and add to the hash map before entering recursion.
      * <p>
      * clone_node = Node(node.val, [])
      * visited[node] = clone_node
      * <p>
-     * In the absence of such an ordering, we would be caught in the recursion because on encountering the node again in somewhere down the recursion again, we will be traversing it again thus getting into cycles.
+     * In the absence of such an ordering, we would be caught in the recursion because on encountering the node again in somewhere down the recursion again,
+     * we will be traversing it again thus getting into cycles.
      * <p>
      * <p>
-     * Now make the recursive call for the neighbors of the node. Pay attention to how many recursion calls we will be making for any given node. For a given node the number of recursive calls would be equal to the number of its neighbors. Each recursive call made would return the clone of a neighbor. We will prepare the list of these clones returned and put into neighbors of clone node which we had created earlier. This way we will have cloned the given node and it's neighbors.
+     * Now make the recursive call for the neighbors of the node. Pay attention to how many recursion calls we will be making for any given node.
+     * For a given node the number of recursive calls would be equal to the number of its neighbors. Each recursive call made would return the clone of a neighbor.
+     * We will prepare the list of these clones returned and put into neighbors of clone node which we had created earlier.
+     * This way we will have cloned the given node and it's neighbors.
      * <p>
-     * Tip: Recursion could get a bit cumbersome to grasp, if you try to get into every call yourself and try to see what's happening. And why look at every call when every call does the same thing with different inputs. So, you just worry about ONE such call and let the recursion do the rest. And of course always handle the base case or the termination condition of the recursion. Otherwise how would it end?
+     * Tip: Recursion could get a bit cumbersome to grasp, if you try to get into every call yourself and try to see what's happening.
+     * And why look at every call when every call does the same thing with different inputs.
+     * So, you just worry about ONE such call and let the recursion do the rest.
+     * And of course always handle the base case or the termination condition of the recursion. Otherwise how would it end?
      * <p>
      * <p>
      * Complexity Analysis
      * <p>
      * Time Complexity: O(N + M)O(N+M), where NN is a number of nodes (vertices) and MM is a number of edges.
-     * Space Complexity: O(N)O(N). This space is occupied by the visited hash map and in addition to that, space would also be occupied by the recursion stack since we are adopting a recursive approach here. The space occupied by the recursion stack would be equal to O(H)O(H) where HH is the height of the graph. Overall, the space complexity would be O(N)O(N).
+     * Space Complexity: O(N)O(N). This space is occupied by the visited hash map and in addition to that,
+     * space would also be occupied by the recursion stack since we are adopting a recursive approach here.
+     * The space occupied by the recursion stack would be equal to O(H)O(H) where HH is the height of the graph.
+     * Overall, the space complexity would be O(N)O(N).
      */
     private HashMap<Node, Node> visited = new HashMap<>();
 
@@ -133,14 +157,20 @@ public class CloneGraph {
      *Approach 2: Breadth First Search
      * Intuition
      *
-     * We could agree DFS is a good enough solution for this problem. However, if the recursion stack is what we are worried about then DFS is not our best bet. Sure, we can write an iterative version of depth first search by using our own stack. However, we also have the BFS way of doing iterative traversal of the graph and we'll be exploring that solution as well.
+     * We could agree DFS is a good enough solution for this problem. However, if the recursion stack is what we are worried about then
+     * DFS is not our best bet. Sure, we can write an iterative version of depth first search by using our own stack. However, we also have the
+     * BFS way of doing iterative traversal of the graph and we'll be exploring that solution as well.
      *
      *
-     * The difference is only in the traversal of DFS and BFS. As the name says it all, DFS explores the depths of the graph first and BFS explores the breadth. Based on the kind of graph we are expecting we can chose one over the other. We would need the visited hash map in both the approaches to avoid cycles.
+     * The difference is only in the traversal of DFS and BFS. As the name says it all, DFS explores the depths of the graph first and
+     * BFS explores the breadth. Based on the kind of graph we are expecting we can chose one over the other. We would need the visited hash map
+     * in both the approaches to avoid cycles.
      *
      * Algorithm
      *
-     * We will use a hash map to store the reference of the copy of all the nodes that have already been visited and copied. The key for the hash map would be the node of the original graph and corresponding value would be the corresponding cloned node of the cloned graph. The visited is used to prevent cycles and get the cloned copy of a node.
+     * We will use a hash map to store the reference of the copy of all the nodes that have already been visited and copied. The key for the hash
+     * map would be the node of the original graph and corresponding value would be the corresponding cloned node of the cloned graph. The visited
+     * is used to prevent cycles and get the cloned copy of a node.
      *
      * Add the first node to the queue. Clone the first node and add it to visited hash map.
      *

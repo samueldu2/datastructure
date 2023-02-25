@@ -6,8 +6,12 @@ import java.util.TreeSet;
 
 public class WorkingWithSet {
     public static void main(String[] args){
-        Set<String> s = new TreeSet<>();
-        Set<String> sh= new HashSet<>();
+        TreeSet<String> s = new TreeSet<>();
+        HashSet<String> sh= new HashSet<>();
+        Set ss=Set.of("a", "b", "c");
+
+
+
 
 
     }

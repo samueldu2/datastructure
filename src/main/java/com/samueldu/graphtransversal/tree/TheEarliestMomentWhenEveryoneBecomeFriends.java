@@ -118,8 +118,8 @@ public class TheEarliestMomentWhenEveryoneBecomeFriends {
         Arrays.sort(logs, new Comparator<int[]>() {
             @Override
             public int compare(int[] log1, int[] log2) {
-                Integer tsp1 = new Integer(log1[0]);
-                Integer tsp2 = new Integer(log2[0]);
+                Integer tsp1 = log1[0];
+                Integer tsp2 = log2[0];
                 return tsp1.compareTo(tsp2);
             }
         });

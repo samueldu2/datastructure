@@ -2,6 +2,7 @@ package com.samueldu.basics;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Set;
 
 public class WorkingWithQueue {
     public static void main(String []a){
@@ -19,6 +20,9 @@ public class WorkingWithQueue {
 
         System.out.println(q.offer("z"));
         System.out.println(q.peek());
-
+        System.out.println(q.element());
+        System.out.println(q);
+        q.retainAll(Set.of("u", "v", "w"));
+        System.out.println(q);
     }
 }

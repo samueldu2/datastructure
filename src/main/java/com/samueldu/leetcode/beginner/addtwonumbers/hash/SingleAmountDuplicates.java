@@ -14,6 +14,6 @@ public class SingleAmountDuplicates {
         }
         Object[] a= new Object[1];
         s.toArray(a);
-        return new Integer(a[0].toString());
+        return Integer.parseInt(a[0].toString());
     }
 }

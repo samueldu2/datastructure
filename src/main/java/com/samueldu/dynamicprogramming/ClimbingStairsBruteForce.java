@@ -1,5 +1,8 @@
 package com.samueldu.dynamicprogramming;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * You are climbing a staircase. It takes n steps to reach the top.
  *
@@ -43,16 +46,20 @@ package com.samueldu.dynamicprogramming;
  * Space complexity : O(n)O(n). The depth of the recursion tree can go upto nn.
  */
 public class ClimbingStairsBruteForce {
+    Map<Integer, Integer> climbings = new HashMap<>();
     public int climbStairs(int n) {
         return climb_Stairs(0, n);
     }
     public int climb_Stairs(int i, int n) {
+        if(climbings.get(i)!=null)
+            return climbings.get(i);
         if (i > n) {
             return 0;
         }
         if (i == n) {
             return 1;
         }
-        return climb_Stairs(i + 1, n) + climb_Stairs(i + 2, n);
+        climbings.put(i,  climb_Stairs(i + 1, n) + climb_Stairs(i + 2, n));
+        return climbings.get(i);
     }
 }

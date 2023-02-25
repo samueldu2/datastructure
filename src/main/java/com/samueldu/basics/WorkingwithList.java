@@ -23,5 +23,6 @@ public class WorkingwithList {
 
         List lString = List.of("a", "b", "c");
         lString.forEach(System.out::print);
+
     }
 }

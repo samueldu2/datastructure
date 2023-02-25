@@ -6,7 +6,7 @@ import java.util.HashSet;
 public class Intersection {
     public int[] intersection(int[] nums1, int[] nums2) {
         HashSet <Integer>s = new HashSet<>();
-        Arrays.stream(nums1).forEach(x->s.add(new Integer(x)));
+        Arrays.stream(nums1).forEach(x->s.add(x));
         HashSet result = new HashSet();
         Arrays.stream(nums2).forEach(x->{if(s.contains(x) ) result.add(x);});
 

@@ -29,7 +29,7 @@ public class SingleNumber {
     public int singleNumberRegular(int[] nums) {
         HashSet<Integer> h = new HashSet<>();
         for (int n:nums){
-            Integer i = new Integer(n);
+            Integer i = n;
             if(h.contains(i)){
                 h.remove (i);
             }else{
